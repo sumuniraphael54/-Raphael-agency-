@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#081421">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Raphael Agency | Tangaza na Tafuta Wafanyakazi">
+  <meta property="og:description" content="Raphael Agency inawaunganisha waajiri na wafanyakazi wanaofaa kwa biashara, kampuni, viwanda, migahawa, usafi, warehouse na huduma mbalimbali.">
+  <meta property="og:locale" content="sw_TZ">
+  <meta name="description" content="Raphael Agency - Tunakuunganisha na wafanyakazi wanaofaa kwa biashara, kampuni, viwanda, migahawa na huduma mbalimbali.">
+  <title>Raphael Agency | Tangaza na Tafuta Wafanyakazi</title>
+  <style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--dark:#081421;--dark2:#0d2235;--gold:#f2b84b;--gold2:#ffd477;--white:#fff;--text:#1d2a35;--muted:#657482;--soft:#f4f7f9;--border:#dce5eb}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:#fff;line-height:1.65}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+.navbar{position:sticky;top:0;z-index:1000;background:rgba(8,20,33,.96);backdrop-filter:blur(12px);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:20px;display:flex;align-items:center;gap:10px}
+.logo span{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--gold);color:var(--dark);font-size:14px}
+nav{display:flex;gap:26px;font-size:14px;font-weight:600}
+nav a{opacity:.85;transition:.2s}nav a:hover{opacity:1;color:var(--gold)}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:28px}
+.hero{min-height:690px;position:relative;display:flex;align-items:center;overflow:hidden;background:
+linear-gradient(90deg,rgba(4,15,25,.96) 0%,rgba(4,15,25,.82) 45%,rgba(4,15,25,.48) 100%),
+url("https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1800&q=85") center/cover}
+.hero:after{content:"";position:absolute;inset:auto -10% -120px -10%;height:230px;background:#fff;border-radius:50% 50% 0 0/50% 50% 0 0}
+.hero-content{position:relative;z-index:2;color:#fff;padding:90px 0 120px}
+.badge,.section-label{font-size:12px;letter-spacing:2px;font-weight:800;color:var(--gold)}
+.hero h1{font-size:clamp(40px,6vw,76px);line-height:1.04;margin:18px 0 22px;max-width:850px;letter-spacing:-2px}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:19px;max-width:700px;color:#e3ebf1}
+.hero-buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:10px;font-weight:800;transition:.25s;border:1px solid transparent}
+.btn.primary{background:var(--gold);color:var(--dark)}.btn.primary:hover{transform:translateY(-2px);background:var(--gold2)}
+.btn.outline{border-color:rgba(255,255,255,.4);color:#fff;background:rgba(255,255,255,.06)}.btn.outline:hover{background:#fff;color:var(--dark)}
+.hero-note{margin-top:18px;font-size:13px;color:#c6d1d9}
+.trust-strip{background:#fff;position:relative;z-index:5;margin-top:-55px}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;box-shadow:0 15px 45px rgba(5,22,35,.1);border-radius:16px;overflow:hidden}
+.trust-grid div{padding:22px;display:flex;gap:12px;align-items:center;border-right:1px solid var(--border)}
+.trust-grid div:last-child{border:0}.trust-grid strong{color:var(--gold);font-size:20px}.trust-grid span{font-weight:700;font-size:14px}
+.section{padding:100px 0}.soft{background:var(--soft)}
+.two-col{display:grid;grid-template-columns:1fr 1.25fr;gap:80px}
+h2{font-size:clamp(31px,4vw,48px);line-height:1.15;color:var(--dark);margin-top:12px;letter-spacing:-1px}
+h2 span{color:#c58b25}.about-text p{margin-bottom:18px;color:var(--muted)}
+.notice{border-left:4px solid var(--gold);background:#fff7e7;padding:18px 20px;border-radius:0 10px 10px 0;color:#5d4a28}
+.center-heading{text-align:center;max-width:760px;margin:0 auto 48px}.center-heading p{color:var(--muted);margin-top:10px}
+.job-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.job-card{background:#fff;padding:27px;border:1px solid var(--border);border-radius:15px;transition:.25s}
+.job-card:hover{transform:translateY(-5px);box-shadow:0 14px 35px rgba(8,20,33,.08);border-color:#efd18e}
+.job-icon{font-size:34px;margin-bottom:12px}.job-card h3{color:var(--dark);margin-bottom:6px}.job-card p{font-size:14px;color:var(--muted)}
+.steps{max-width:900px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.step{display:flex;gap:18px;padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
+.num{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--dark);color:var(--gold);font-weight:900}
+.step h3{color:var(--dark);margin-bottom:5px}.step p{font-size:14px;color:var(--muted)}
+.pricing{background:#07131f;color:#fff}.pricing h2{color:#fff}.pricing .center-heading p{color:#aebdc8}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.price-card{background:#fff;color:var(--text);padding:34px;border-radius:17px;position:relative;overflow:hidden}
+.price-card.featured{border:2px solid var(--gold)}
+.price-number{color:var(--gold);font-weight:900;font-size:14px;letter-spacing:2px}
+.price-card h3{font-size:25px;color:var(--dark);margin-top:7px}.price-card h4{color:#8b6929;margin:4px 0 18px}
+.price-card ul{padding-left:20px}.price-card li{margin:10px 0;color:#52616c}
+.warning-box{margin-top:22px;background:#fff5d9;color:#5b4823;border-radius:12px;padding:18px 20px;font-size:14px}
+.rules{background:#fff}.rules-box{max-width:900px;margin:auto;background:#f7f9fa;border:1px solid var(--border);border-radius:15px;padding:30px 36px}
+.rules-box li{margin:13px 0;padding-left:5px;color:#4e5d68}
+.request-section{background:linear-gradient(135deg,#edf4f8,#fff)}
+.request-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:start}
+.request-intro h2{margin-bottom:18px}.request-intro p{color:var(--muted);margin-bottom:24px}
+.contact-card{display:flex;flex-direction:column;background:var(--dark);color:#fff;border-radius:14px;padding:20px 22px;gap:3px}.contact-card span{font-size:13px;color:#b7c7d2}.contact-card strong{font-size:24px;color:var(--gold)}
+.request-form{background:#fff;padding:30px;border-radius:18px;box-shadow:0 18px 55px rgba(8,20,33,.1);border:1px solid var(--border)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{margin-bottom:17px}
+label{display:block;font-size:13px;font-weight:800;color:var(--dark);margin-bottom:7px}
+input,select,textarea{width:100%;border:1px solid #d5e0e7;border-radius:9px;padding:13px 14px;font:inherit;outline:none;background:#fbfcfd;color:#24323d}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(242,184,75,.15)}
+textarea{resize:vertical}.check{display:flex;gap:10px;align-items:flex-start;font-weight:600;margin:7px 0 18px}.check input{width:18px;height:18px;margin-top:2px;flex:none}
+.submit-btn{width:100%;border:0;border-radius:10px;padding:15px;background:#20b65a;color:#fff;font-weight:900;font-size:15px;cursor:pointer;transition:.2s}.submit-btn:hover{background:#179847;transform:translateY(-1px)}
+.form-note{font-size:12px;color:#7a8994;text-align:center;margin-top:10px}
+.cta{padding:75px 0;text-align:center;background:var(--gold);color:var(--dark)}.cta h2{color:var(--dark);margin-bottom:8px}.cta p{margin-bottom:22px}.cta .btn{background:var(--dark);color:#fff}
+footer{background:#06111c;color:#b8c6cf;padding:48px 0 18px}.footer-inner{display:flex;justify-content:space-between;gap:30px}.footer-logo{color:#fff}.footer-contact{display:flex;flex-direction:column;gap:5px;text-align:right}.footer-contact strong{color:#fff}.footer-contact a{color:var(--gold)}.copyright{text-align:center;border-top:1px solid rgba(255,255,255,.08);margin-top:35px;padding-top:18px;font-size:12px}
+@media(max-width:850px){nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--dark);padding:15px 4%;flex-direction:column;gap:0}nav.open{display:flex}nav a{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07)}.menu-btn{display:block}.trust-grid{grid-template-columns:1fr 1fr}.trust-grid div:nth-child(2){border-right:0}.trust-grid div{border-bottom:1px solid var(--border)}.two-col,.request-wrap{grid-template-columns:1fr;gap:35px}.job-grid{grid-template-columns:1fr 1fr}.pricing-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}}
+@media(max-width:560px){.hero{min-height:650px}.hero-content{padding:70px 0 100px}.hero h1{font-size:42px}.hero p{font-size:16px}.trust-grid{grid-template-columns:1fr}.trust-grid div{border-right:0}.job-grid,.form-row{grid-template-columns:1fr}.section{padding:75px 0}.request-form{padding:21px}.rules-box{padding:20px}.footer-inner{flex-direction:column}.footer-contact{text-align:left}.hero:after{bottom:-150px}}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Raphael Agency",
+  "description":"Huduma ya kuwaunganisha waajiri na wafanyakazi wanaofaa kwa mahitaji mbalimbali ya kazi.",
+  "telephone":"+255619230004",
+  "contactPoint":{
+    "@type":"ContactPoint",
+    "telephone":"+255619230004",
+    "contactType":"customer service",
+    "availableLanguage":["Swahili","English"]
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="logo"><span>RA</span> Raphael Agency</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Fungua menu">☰</button>
+    <nav id="navMenu">
+      <a href="#home">Mwanzo</a>
+      <a href="#about">Kuhusu Sisi</a>
+      <a href="#jobs">Aina za Kazi</a>
+      <a href="#process">Utaratibu</a>
+      <a href="#request">Tuma Ombi</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="badge">RAPHAEL AGENCY • EMPLOYMENT CONNECTION</div>
+      <h1>TANGAZA NA TAFUTA<br><span>WAFANYAKAZI MBALIMBALI</span></h1>
+      <p>
+        Tunakuunganisha na wafanyakazi wanaofaa kulingana na mahitaji ya biashara,
+        kampuni, kiwanda, mgahawa au huduma yako.
+      </p>
+      <div class="hero-buttons">
+        <a class="btn primary" href="#request">Tuma Ombi la Mfanyakazi</a>
+        <a class="btn outline" href="#process">soma utaratibu chini</a>
+      </div>
+      <div class="hero-note">Huduma inalenga hasa nafasi za kazi zisizohitaji elimu ya juu ya chuo.</div>
+    </div>
+  </section>
+
+  <section class="trust-strip">
+    <div class="container trust-grid">
+      <div><strong>01</strong><span>Tuma mahitaji yako</span></div>
+      <div><strong>02</strong><span>Tunatafuta mfanyakazi anayefaa</span></div>
+      <div><strong>03</strong><span>Tunakuunganisha na mfanyakazi</span></div>
+      <div><strong>04</strong><span>Makubaliano na kuanza kazi</span></div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container two-col">
+      <div>
+        <div class="section-label">KUHUSU RAPHAEL AGENCY</div>
+        <h2>Sisi ni kiunganishi kati ya <span>mwajiri na mfanyakazi.</span></h2>
+      </div>
+      <div class="about-text">
+        <p>
+          Raphael Agency ni huduma inayolenga kuwasaidia waajiri kupata wafanyakazi
+          kulingana na mahitaji na vigezo vya nafasi zao. Tunapokea mahitaji yako,
+          tunakusaidia kutafuta mtu anayefaa, kisha tunakuunganisha naye ili
+          muweze kufanya mazungumzo na makubaliano ya kazi.
+        </p>
+        <p>
+          Tunalenga hasa nafasi kama migahawa, viwanda, usafi, warehouse, maduka,
+          ulinzi, kazi za mikono na nafasi nyingine ambazo mara nyingi hazihitaji
+          elimu kubwa ya chuo.
+        </p>
+        <div class="notice">
+          <strong>Jambo muhimu:</strong> Raphael Agency si mwajiri wa moja kwa moja
+          wa mfanyakazi. Tunafanya kazi kama <b>kiunganishi</b>; masharti ya kazi,
+          mshahara, muda wa kazi na makubaliano ya mwisho hufanywa kati ya mwajiri
+          na mfanyakazi.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="jobs" class="section soft">
+    <div class="container">
+      <div class="center-heading">
+        <div class="section-label">AINA ZA WAFANYAKAZI</div>
+        <h2>Unahitaji mfanyakazi wa aina gani?</h2>
+        <p>Tunaweza kukusaidia kutafuta wafanyakazi katika maeneo mbalimbali.</p>
+      </div>
+
+      <div class="job-grid">
+        <article class="job-card"><div class="job-icon">🍽️</div><h3>Migahawa & Hotel</h3><p>Wahudumu, wapishi, wasaidizi wa jikoni, cleaners na nafasi nyingine.</p></article>
+        <article class="job-card"><div class="job-icon">🏭</div><h3>Viwanda</h3><p>Production helpers, packers, loaders, cleaners na wafanyakazi wa uzalishaji.</p></article>
+        <article class="job-card"><div class="job-icon">🧹</div><h3>Usafi</h3><p>Wafanyakazi wa usafi wa ofisi, maduka, nyumba, hoteli na maeneo mengine.</p></article>
+        <article class="job-card"><div class="job-icon">📦</div><h3>Warehouse</h3><p>Wapakiaji, washushaji, store helpers, packers na wasaidizi wa ghala.</p></article>
+        <article class="job-card"><div class="job-icon">🏪</div><h3>Maduka & Biashara</h3><p>Shop assistants, sales assistants, stock helpers na wafanyakazi wengine.</p></article>
+        <article class="job-card"><div class="job-icon">🛡️</div><h3>Ulinzi</h3><p>Walinzi na nafasi nyingine zinazohusiana na usalama kulingana na mahitaji.</p></article>
+        <article class="job-card"><div class="job-icon">🔨</div><h3>Kazi za Mikono</h3><p>Helpers, mafundi wasaidizi, loaders na kazi mbalimbali za vitendo.</p></article>
+        <article class="job-card"><div class="job-icon">🚚</div><h3>Usafirishaji & Delivery</h3><p>Wasaidizi wa delivery, loaders na nafasi nyingine kulingana na mahitaji.</p></article>
+        <article class="job-card"><div class="job-icon">👷</div><h3>Nafasi Nyingine</h3><p>Kama hujaona nafasi yako hapa, eleza unachohitaji kwenye fomu.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section">
+    <div class="container">
+      <div class="center-heading">
+        <div class="section-label">JINSI HUDUMA INAVYOFANYA KAZI</div>
+        <h2>Utaratibu wetu ni rahisi na wazi</h2>
+        <p>Soma utaratibu wote kabla ya kutuma ombi.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step"><div class="num">01</div><div><h3>Tuma mahitaji yako</h3><p>Jaza fomu na tueleze aina ya mfanyakazi unayemhitaji, idadi, eneo, mshahara, uzoefu na vigezo vingine.</p></div></div>
+        <div class="step"><div class="num">02</div><div><h3>Tunapokea na kupitia ombi</h3><p>Tutawasiliana nawe kupitia mawasiliano uliyoweka ili kuthibitisha mahitaji yako na kupata maelezo ya ziada kama yatahitajika.</p></div></div>
+        <div class="step"><div class="num">03</div><div><h3>Tunatafuta anayefaa</h3><p>Tunatafuta na kuwasiliana na watu wanaoweza kufaa kulingana na mahitaji uliyotupatia.</p></div></div>
+        <div class="step"><div class="num">04</div><div><h3>Tunakuunganisha</h3><p>Tunakufikishia mgombea anayefaa ili muweze kuzungumza na kufanya maamuzi kuhusu kazi.</p></div></div>
+        <div class="step"><div class="num">05</div><div><h3>Mnakubaliana</h3><p>Mshahara, muda wa kazi, majukumu na masharti mengine ya kazi yanaamuliwa kwa makubaliano kati ya mwajiri na mfanyakazi.</p></div></div>
+        <div class="step"><div class="num">06</div><div><h3>Mfanyakazi anaanza kazi</h3><p>Baada ya makubaliano kukamilika, mfanyakazi huanza kazi kwa mujibu wa makubaliano yaliyofikiwa.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pricing">
+    <div class="container">
+      <div class="center-heading">
+        <div class="section-label">UTARATIBU WA MAOMBI</div>
+        <h2>Chagua utaratibu unaokufaa</h2>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="price-card">
+          <div class="price-number">01</div>
+          <h3>Utaratibu wa Kwanza</h3>
+          <h4>Bila malipo kutoka kwa mwajiri</h4>
+          <ul>
+            <li>Tunakusaidia kutafuta mfanyakazi bila kukutoza wewe moja kwa moja kwa huduma ya kutafuta.</li>
+            <li>Kila mfanyakazi tunayemleta atalipa <strong>TZS 10,000</strong> kama gharama ya huduma, na hatatakiwa kulipa pesa nyingine yeyote .</li>
+            <li>Mwajiri hatatakiwa kumtoza pesa mfanyakazi yeyote  chini ya utaratibu huu.</li>
+            <li>Mfanyakazi aanze kazi baada ya mwajiri na mfanyakazi kukubaliana kuhusu masharti ya kazi amabapo masharti na vigezo vitaandikwa chini sehemu ya maombi.</li>
+          </ul>
+        </article>
+
+        <article class="price-card featured">
+          <div class="price-number">02</div>
+          <h3>Utaratibu wa Pili</h3>
+          <h4>Mwajiri anaweka kiasi cha huduma</h4>
+          <ul>
+            <li>Mwajiri anaweza kuweka kiasi cha huduma kisichozidi <strong>TZS 30,000</strong> kwa kila mfanyakazi.ambapo mwajiri atalipia shilingi 10,000 kwetu sisi kama pesa ya huduma </li>
+            <li>Kiasi hicho kinaweza kuwa <strong>TZS 10,000, 20,000 au 30,000</strong> kulingana na aina ya kazi na mshahara .</li>
+            <li>Hivyo mwajili atalipia kiasi cha 10,000 kwa ajili ya huduma na mfanyakazi atatakiwa kulipa kiasi kisichozidi 30,000 kama pesa ya kingilio kwa mwajili .</li>
+            <li>Hakuna malipo mengine yanayopaswa kudaiwa bila makubaliano ya wazi.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="warning-box">
+        <strong>⚠️ Uwazi wa malipo:</strong> Kiasi cha huduma na anayelipa kinapaswa kueleweka kabla ya mchakato kukamilika.
+        Usifanye malipo yoyote kwa mtu anayejitambulisha kama Raphael Agency bila kuthibitisha kwanza kupitia mawasiliano rasmi ya agency.
+      </div>
+    </div>
+  </section>
+
+  <section class="section rules">
+    <div class="container">
+      <div class="center-heading">
+        <div class="section-label">MASHARTI YA HUDUMA</div>
+        <h2>Mambo ya kuzingatia kabla ya kutuma ombi</h2>
+      </div>
+
+      <div class="rules-box">
+        <ol>
+          <li>Kwa kutuma ombi kupitia website hii, unathibitisha kuwa umesoma na kukubaliana na utaratibu wa huduma wa Raphael Agency.</li>
+          <li>Ni lazima mwajiri aweke <strong>jina lake na mawasiliano sahihi</strong> ili tuweze kuwasiliana naye kuhusu ombi.</li>
+          <li>Mwajiri anatakiwa kutoa taarifa sahihi kuhusu nafasi, eneo la kazi, mshahara, majukumu, muda wa kazi na vigezo vingine muhimu.</li>
+          <li>Raphael Agency hufanya kazi kama kiunganishi. Makubaliano ya mwisho ya ajira hufanywa kati ya mwajiri na mfanyakazi.</li>
+          <li>Usimlazimishe mfanyakazi kufanya kazi tofauti kabisa na kazi iliyotangazwa bila makubaliano mapya.</li>
+          <li>Malipo ya huduma yanapaswa kufanyika kwa mujibu wa utaratibu uliokubaliwa kabla ya kuanza kazi.</li>
+          <li>Raphael Agency haiwezi kuwajibika kwa makubaliano binafsi yaliyofanywa na mwajiri na mfanyakazi nje ya taarifa na utaratibu uliokubaliwa.</li>
+          <li>Ikiwa taarifa ulizoweka si sahihi au zina nia ya kumdanganya mfanyakazi, ombi linaweza kukataliwa na hatua zaidi kisheria kuchukuliwa </li>
+          <li>Raphael Agency inaweza kuomba maelezo ya ziada kabla ya kuanza kutafuta mfanyakazi.</li>
+          <li>Kutuma fomu hakumaanishi kuwa mfanyakazi atapatikana papo hapo; muda wa kumpata hutegemea aina ya kazi na upatikanaji wa wafanyakazi.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="request" class="section request-section">
+    <div class="container request-wrap">
+      <div class="request-intro">
+        <div class="section-label">TUMA OMBI LA MFANYAKAZI</div>
+        <h2>Tuambie unahitaji mfanyakazi wa aina gani.</h2>
+        <p>
+          Jaza taarifa kwa usahihi kadri uwezavyo. Ukibonyeza
+          <strong>TUMA MAOMBI WHATSAPP</strong>, WhatsApp itafunguka ikiwa na ujumbe
+          uliotengeneza kutoka kwenye taarifa zako.
+        </p>
+        <div class="contact-card">
+          <span>📲 WhatsApp ya Raphael Agency</span>
+          <strong>0619 230 004</strong>
+        </div>
+      </div>
+
+      <div class="privacy-notice" style="margin:0 0 18px;padding:13px 15px;border-left:4px solid var(--gold);background:#f8fafb;border-radius:8px;color:var(--text);font-size:13px;line-height:1.55;">
+        <strong>Faragha ya taarifa:</strong> Taarifa unazoweka kwenye fomu hutumika kushughulikia ombi lako na kuwasiliana nawe kuhusu mahitaji ya mfanyakazi. Kwa kutuma ombi, unakubali taarifa hizo kutumwa kupitia WhatsApp ya Raphael Agency.
+      </div>
+
+      <form id="workerForm" class="request-form">
+        <div class="form-row">
+          <div class="field"><label for="name">Jina lako *</label><input id="name" required placeholder="Mfano: John Michael"></div>
+          <div class="field"><label for="phone">Namba yako ya simu *</label><input id="phone" type="tel" required placeholder="Mfano: 07XXXXXXXX"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="field"><label for="business">Jina la kampuni/biashara</label><input id="business" placeholder="Mfano: XYZ Restaurant"></div>
+          <div class="field"><label for="location">Eneo la kazi *</label><input id="location" required placeholder="Mfano: Keko, Dar es Salaam"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="jobType">Aina ya mfanyakazi *</label>
+            <select id="jobType" required>
+              <option value="">-- Chagua aina --</option>
+              <option>Migahawa & Hotel</option>
+              <option>Viwanda</option>
+              <option>Usafi</option>
+              <option>Warehouse</option>
+              <option>Maduka & Biashara</option>
+              <option>Ulinzi</option>
+              <option>Kazi za Mikono</option>
+              <option>Usafirishaji & Delivery</option>
+              <option>Nyingine</option>
+            </select>
+          </div>
+          <div class="field"><label for="quantity">Idadi ya wafanyakazi *</label><input id="quantity" type="number" min="1" required placeholder="Mfano: 3"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="field"><label for="education">Elimu inayohitajika</label><input id="education" placeholder="Mfano: Darasa la 7 / Form IV"></div>
+          <div class="field"><label for="experience">Uzoefu unaohitajika</label><input id="experience" placeholder="Mfano: Mwaka 1 / Hakuna uzoefu"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="field"><label for="salary">Mshahara / malipo</label><input id="salary" placeholder="Mfano: TZS 250,000 kwa mwezi"></div>
+          <div class="field"><label for="workTime">Muda wa kazi</label><input id="workTime" placeholder="Mfano: 7:00 AM - 5:00 PM"></div>
+        </div>
+
+        <div class="field">
+          <label for="duties">Majukumu ya mfanyakazi</label>
+          <textarea id="duties" rows="4" placeholder="Eleza kwa ufupi mfanyakazi atafanya nini..."></textarea>
+        </div>
+
+        <div class="field">
+          <label for="criteria">Vigezo / mahitaji maalum</label>
+          <textarea id="criteria" rows="4" placeholder="Mfano: awe na nidhamu, awe tayari kufanya kazi muda wote, n.k."></textarea>
+        </div>
+
+        <div class="field">
+          <label for="extra">Maelezo mengine</label>
+          <textarea id="extra" rows="3" placeholder="Andika taarifa nyingine muhimu..."></textarea>
+        </div>
+
+        <label class="check">
+          <input type="checkbox" id="agree" required>
+          <span>Nimesoma na kukubaliana na utaratibu na masharti ya Raphael Agency.</span>
+        </label>
+
+        <button type="submit" class="submit-btn">📲 TUMA MAOMBI WHATSAPP</button>
+        <p class="form-note">WhatsApp itafunguka baada ya kubonyeza kitufe. Hakikisha WhatsApp imewekwa kwenye simu yako.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Una hitaji la wafanyakazi?</h2>
+      <p>Tuma mahitaji yako leo. Tutawasiliana nawe kwa maelezo zaidi.</p>
+      <a class="btn primary" href="#request">Tuma Ombi Sasa</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <div class="logo footer-logo"><span>RA</span> Raphael Agency</div>
+      <p>Tunakuunganisha na wafanyakazi wanaofaa.</p>
+    </div>
+    <div class="footer-contact">
+      <strong>WhatsApp</strong>
+      <a href="https://wa.me/255619230004" target="_blank" rel="noopener">+255 619 230 004</a>
+    </div>
+  </div>
+  <div class="copyright">© <span id="year"></span> Raphael Agency. Haki zote zimehifadhiwa.</div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
+
+menuBtn.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
+});
+
+document.querySelectorAll("#navMenu a").forEach(link => {
+  link.addEventListener("click", () => navMenu.classList.remove("open"));
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const form = document.getElementById("workerForm");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const business = document.getElementById("business").value.trim();
+  const location = document.getElementById("location").value.trim();
+  const jobType = document.getElementById("jobType").value;
+  const quantity = document.getElementById("quantity").value.trim();
+  const education = document.getElementById("education").value.trim();
+  const experience = document.getElementById("experience").value.trim();
+  const salary = document.getElementById("salary").value.trim();
+  const workTime = document.getElementById("workTime").value.trim();
+  const duties = document.getElementById("duties").value.trim();
+  const criteria = document.getElementById("criteria").value.trim();
+  const extra = document.getElementById("extra").value.trim();
+
+  const message =
+`*RAPHAEL AGENCY - OMBI LA MFANYAKAZI*
+
+*MAWASILIANO YA MWAAJIRI*
+Jina: ${name}
+Simu: ${phone}
+Kampuni/Biashara: ${business || "Haijawekwa"}
+Eneo la kazi: ${location}
+
+*MAHITAJI YA MFANYAKAZI*
+Aina ya kazi: ${jobType}
+Idadi: ${quantity}
+Elimu: ${education || "Haijawekwa"}
+Uzoefu: ${experience || "Haijawekwa"}
+Mshahara/Malipo: ${salary || "Haijawekwa"}
+Muda wa kazi: ${workTime || "Haijawekwa"}
+
+Majukumu:
+${duties || "Haijawekwa"}
+
+Vigezo/Mahitaji maalum:
+${criteria || "Haijawekwa"}
+
+Maelezo mengine:
+${extra || "Hakuna"}
+
+Nimekubali utaratibu na masharti ya Raphael Agency.`;
+
+  const whatsappNumber = "255619230004";
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+  window.open(url, "_blank");
+});
+
+</script>
+<a class="floating-whatsapp" href="https://wa.me/255619230004" target="_blank" rel="noopener" aria-label="Wasiliana na Raphael Agency kupitia WhatsApp">📲 WhatsApp</a>
+<style>
+.floating-whatsapp{position:fixed;right:18px;bottom:18px;z-index:1100;background:#20b858;color:#fff;padding:11px 16px;border-radius:999px;font-weight:800;font-size:13px;box-shadow:0 8px 24px rgba(0,0,0,.22)}
+.floating-whatsapp:hover{transform:translateY(-2px)}
+@media(max-width:560px){.floating-whatsapp{right:12px;bottom:12px;padding:10px 13px}}
+</style>
+</body>
+</html>
